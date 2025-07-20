@@ -1,0 +1,82 @@
+2023-10-01 12:05:23,487 - core.data_fetcher - INFO - Created cache directory: data_cache
+2023-10-01 12:05:35,112 - core.data_fetcher - INFO - API keys loaded successfully
+2023-10-01 12:06:02,451 - core.data_fetcher - INFO - Fetching EURUSD=X from Yahoo Finance (1d, 15m)
+2023-10-01 12:06:18,734 - core.data_fetcher - INFO - Cached EURUSD=X data: data_cache/EURUSD=X_1d_15m.csv
+2023-10-01 12:06:45,892 - core.signal_generator - ERROR - Error generating signal for AAPL: 'Close'
+Traceback (most recent call last):
+  File "/PocketOption-Signal-Generator/core/signal_generator.py", line 32, in generate_signals
+    signal = stock_agent.generate_signal(asset['symbol'])
+  File "/PocketOption-Signal-Generator/ai_agents/stock_agent.py", line 28, in generate_signal
+    last_close = data_daily['Close'].iloc[-1]
+  File "/venv/lib/python3.10/site-packages/pandas/core/frame.py", line 3761, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3655, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Close'
+
+2023-10-01 12:07:03,556 - core.telegram_bot - ERROR - Telegram error: Chat not found
+2023-10-01 12:07:30,128 - core.data_fetcher - ERROR - Error fetching data for XAUUSD: No data found for this date range, symbol may be delisted
+2023-10-01 12:08:15,402 - core.data_fetcher - WARNING - Rate limited: Slept for 8.24 seconds
+2023-10-01 12:09:47,831 - main - ERROR - Error in main loop: 'confidence'
+Traceback (most recent call last):
+  File "/PocketOption-Signal-Generator/main.py", line 15, in main
+    message = "🚀 PocketOption Signals 🚀\n\n" + "\n".join(
+  File "/PocketOption-Signal-Generator/main.py", line 16, in <listcomp>
+    [f"{s['asset']}: {s['signal']} (Confidence: {s['confidence']}%)" 
+KeyError: 'confidence'
+
+2023-10-01 12:10:22,673 - core.data_fetcher - INFO - Fetching BTC-USD from Yahoo Finance (1d, 15m)
+2023-10-01 12:11:05,189 - core.data_fetcher - ERROR - Error getting real-time price for ETH-USD: No data found for this date range, symbol may be delisted
+2023-10-01 12:12:30,445 - ai_agents.crypto_agent - WARNING - Insufficient data for BTCUSD (24 records), using fallback strategy
+2023-10-01 12:13:18,776 - core.telegram_bot - ERROR - NetworkError: Failed to connect to Telegram API (timeout=30)
+2023-10-01 12:14:02,913 - core.data_fetcher - INFO - Cleared cache: Deleted 14 files older than 7 days
+2023-10-01 12:15:40,258 - core.signal_generator - ERROR - Error generating signal for US500: TA-Lib not installed
+Traceback (most recent call last):
+  File "/PocketOption-Signal-Generator/core/signal_generator.py", line 30, in generate_signals
+    signal = index_agent.generate_signal(asset['symbol'])
+  File "/PocketOption-Signal-Generator/ai_agents/index_agent.py", line 28, in generate_signal
+    data_daily['SMA_100'] = talib.SMA(data_daily['Close'], timeperiod=100)
+  File "/venv/lib/python3.10/site-packages/talib/__init__.py", line 268, in SMA
+    return abstract.SMA(real, timeperiod)
+  File "/venv/lib/python3.10/site-packages/talib/abstract.py", line 358, in __call__
+    raise Exception('TA-Lib not installed, or this function not implemented')
+Exception: TA-Lib not installed, or this function not implemented
+
+2023-10-01 12:16:25,634 - core.data_fetcher - INFO - Fetching CL=F from Twelve Data (1d, 60min)
+2023-10-01 12:17:40,112 - core.data_fetcher - ERROR - Twelve Data error: API rate limit exceeded (100 requests/day)
+2023-10-01 12:18:15,873 - ai_agents.forex_agent - ERROR - Error generating signal for GBPJPY: division by zero
+Traceback (most recent call last):
+  File "/PocketOption-Signal-Generator/ai_agents/forex_agent.py", line 86, in generate_signal
+    indicators['BB_Percent'] = ((data['close'].iloc[-1] - indicators['BB_Lower']) / 
+ZeroDivisionError: division by zero
+
+2023-10-01 12:19:30,447 - core.telegram_bot - INFO - Message sent successfully to chat -1001234567890
+2023-10-01 12:20:05,189 - main - INFO - Sent 5 signals to Telegram
+2023-10-01 12:21:40,556 - core.data_fetcher - WARNING - Using fallback to Yahoo Finance after Alpha Vantage failure
+2023-10-01 12:22:18,734 - core.data_fetcher - INFO - Cached ^GSPC data: data_cache/^GSPC_1y_1d.csv
+2023-10-01 12:23:02,913 - core.signal_generator - ERROR - Error generating signal for TSLA: IndexError at position -1
+Traceback (most recent call last):
+  File "/PocketOption-Signal-Generator/core/signal_generator.py", line 32, in generate_signals
+    signal = stock_agent.generate_signal(asset['symbol'])
+  File "/PocketOption-Signal-Generator/ai_agents/stock_agent.py", line 45, in generate_signal
+    last_stoch_k = data_hourly['Stoch_%K'].iloc[-1]
+  File "/venv/lib/python3.10/site-packages/pandas/core/indexing.py", line 967, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+  File "/venv/lib/python3.10/site-packages/pandas/core/indexing.py", line 1202, in _getitem_axis
+    return self._get_label(key, axis=axis)
+  File "/venv/lib/python3.10/site-packages/pandas/core/indexing.py", line 1153, in _get_label
+    return self.obj.xs(label, axis=axis)
+  File "/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 3862, in xs
+    return self[key]
+  File "/venv/lib/python3.10/site-packages/pandas/core/frame.py", line 3761, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3655, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Stoch_%K'
+
+2023-10-01 12:24:30,128 - core.data_fetcher - INFO - Switching to yfinance after Twelve Data failure
+2023-10-01 12:25:45,402 - core.telegram_bot - ERROR - Telegram error: Message text is empty
+2023-10-01 12:26:18,776 - main - WARNING - No signals generated in this cycle
+2023-10-01 12:27:02,451 - core.data_fetcher - INFO - Fetching US500 from Yahoo Finance (1d, 15m)
+2023-10-01 12:28:40,112 - ai_agents.commodity_agent - INFO - Using seasonality factor for XAUUSD in month 10
+2023-10-01 12:29:25,634 - core.signal_generator - INFO - Generated 5 signals successfully
