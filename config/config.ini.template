@@ -1,0 +1,10 @@
+[Telegram]
+bot_token = YOUR_BOT_TOKEN_HERE
+chat_id = YOUR_CHAT_ID_HERE
+
+[Settings]
+interval = 300  # Seconds between updates
+log_level = INFO
+
+[Assets]
+enabled_assets = forex,crypto,stock,commodity,index
