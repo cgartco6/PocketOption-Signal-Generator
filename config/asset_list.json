@@ -1,0 +1,12 @@
+[
+    {"name": "EUR/USD", "symbol": "EURUSD", "type": "forex"},
+    {"name": "GBP/JPY", "symbol": "GBPJPY", "type": "forex"},
+    {"name": "Bitcoin", "symbol": "BTCUSD", "type": "crypto"},
+    {"name": "Ethereum", "symbol": "ETHUSD", "type": "crypto"},
+    {"name": "S&P 500", "symbol": "US500", "type": "index"},
+    {"name": "Gold", "symbol": "XAUUSD", "type": "commodity"},
+    {"name": "Apple", "symbol": "AAPL", "type": "stock"},
+    {"name": "Tesla", "symbol": "TSLA", "type": "stock"},
+    {"name": "Brent Oil", "symbol": "XBRUSD", "type": "commodity"},
+    {"name": "USD/JPY", "symbol": "USDJPY", "type": "forex"}
+]
