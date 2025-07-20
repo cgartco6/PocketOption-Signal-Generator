@@ -1,0 +1,38 @@
+# PocketOption Signal Generator
+
+AI-powered trading signals for PocketOption platform
+
+## Features
+- Multi-asset signals (Forex, Crypto, Stocks, Commodities, Indices)
+- Telegram notifications
+- Cross-platform (Windows & Android)
+- Customizable assets
+
+## Setup
+
+### Windows
+1. Install Python 3.9+
+2. Clone repository
+3. Run `windows/requirements_install.bat`
+4. Create `config/config.ini` from template
+5. Add Telegram credentials
+6. Run `windows/start.bat`
+
+### Android (Termux)
+1. Install Termux
+2. `pkg install python git`
+3. `git clone https://github.com/yourusername/PocketOption-Signal-Generator`
+4. `cd PocketOption-Signal-Generator`
+5. `sh android/termux_launch.sh`
+
+## Configuration
+1. Get Telegram bot token from @BotFather
+2. Add bot to your group
+3. Get chat ID using @getidsbot
+4. Copy `config/config.ini.template` to `config/config.ini`
+5. Update credentials
+
+## Customization
+- Add assets: `config/assets_list.json`
+- Modify intervals: `config/config.ini`
+- Adjust AI parameters in agent files
